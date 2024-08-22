@@ -1,27 +1,24 @@
-import React from "react";
-import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { useState, useEffect } from "react";
-import { selectUser } from "../../features/user/userSlice";
-import { useSelector } from "react-redux";
+
 import { useLoaderData } from "react-router-dom";
 import useUsersData from "../../hooks/useUsersData";
 
-function loader() {
+function Loader() {
   const data = useUsersData();
   return data;
 }
 
 function User() {
   const [users, setUser] = useState(null);
-  const user = useSelector(selectUser);
-  const axiosPrivate = useAxiosPrivate();
+  // const user = useSelector(selectUser);
+  // const axiosPrivate = useAxiosPrivate();
 
   const data = useLoaderData();
   console.log(data);
 
   useEffect(() => {
     setUser(data);
-  }, []);
+  }, [data]);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -53,4 +50,4 @@ function User() {
 }
 
 export default User;
-export { loader };
+export { Loader };

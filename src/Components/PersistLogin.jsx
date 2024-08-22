@@ -1,8 +1,8 @@
 import { selectUser } from "../../features/user/userSlice";
 import useRefreshToken from "../../hooks/useRefreshToken";
 import { useSelector } from "react-redux";
-import { Outlet, useLoaderData } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function PersistLogin() {
   // const isLoading = useLoaderData();
@@ -21,7 +21,7 @@ function PersistLogin() {
       }
     };
     !user?.accessToken ? verifyRefreshToken() : setIsLoading(false);
-  }, []);
+  }, [user, refresh]);
 
   return isLoading ? <h1>Loading</h1> : <Outlet />; //TODO Loading component
 }

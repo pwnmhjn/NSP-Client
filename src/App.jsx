@@ -3,7 +3,7 @@ import PersistLogin from "./Components/PersistLogin.jsx";
 import { Toast } from "./Custom/index.js";
 import { IndexLayout, ReaderLayout, AuthorLayout } from "./Megapages";
 import { Admin, Author, Book, Chapter } from "./Admin";
-import User, { loader as UserLoader } from "./Admin/User.jsx";
+import User, { Loader as UserLoader } from "./Admin/User.jsx";
 import {
   ReaderHome,
   ReaderAbout,
@@ -26,8 +26,8 @@ import {
   CoverEdit,
   UserEditForm,
 } from "./Components/ReaderComponents/index.js";
-import useRefreshToken from "../hooks/useRefreshToken.jsx";
-import { useEffect } from "react";
+// import useRefreshToken from "../hooks/useRefreshToken.jsx";
+// import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ function App() {
           <Route path="register" element={<SignUp />} />
         </Route>
         <Route path="/index-about" element={<IndexAbout />} />
-        //?Protected Route (Readers)
+        {/* //?Protected Route (Readers) */}
         <Route element={<PersistLogin />}>
           <Route element={<PrivateRoute />}>
             <Route path="reader" element={<ReaderLayout />}>
@@ -68,7 +68,7 @@ function App() {
               </Route>
               <Route path="about" element={<ReaderAbout />} />
             </Route>
-            //?------------------------------------------
+            {/* //?------------------------------------------ */}
             <Route path="/admin" element={<Admin />}>
               <Route index loader={UserLoader} element={<User />} />
               <Route path="book" element={<Book />} />
