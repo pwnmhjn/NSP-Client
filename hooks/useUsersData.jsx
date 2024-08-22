@@ -1,4 +1,3 @@
-import React from "react";
 import useAxiosPrivate from "./useAxiosPrivate";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";

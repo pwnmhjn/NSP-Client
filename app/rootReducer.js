@@ -1,12 +1,12 @@
-// import { combineReducers } from "@reduxjs/toolkit";
-// import toastReducer from "../features/toast/toastSlice";
-// import headerReducer from "../features/header/headerSlice";
-// import userReducer from '../features/user/userSlice'
+import { combineReducers } from "@reduxjs/toolkit";
+import toastReducer from "../features/toast/toastSlice";
+import headerReducer from "../features/header/headerSlice";
+import userReducer from '../features/user/userSlice'
 
-// const rootReducer = combineReducers({
-//   toastReducer,
-//   headerReducer,
-//   userReducer
-// });
+const rootReducer = combineReducers({
+    toast: toastReducer,
+    header: headerReducer,
+    user: userReducer
+});
 
-// export default rootReducer;
+export default rootReducer;
