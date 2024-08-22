@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AuthorDetail } from "../Components/AuthorComponents";
 import { Link, Outlet } from "react-router-dom";
-import useAxiosPrivate from "../../hooks/useAxiosPrivate";
-import { selectUser } from "../../features/user/userSlice";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { selectUser } from "../features/user/userSlice";
 import { useSelector } from "react-redux";
 import Pagination from "../Custom/Pagination/Pagination";
 function Authors() {

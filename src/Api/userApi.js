@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ObjectHasValue } from "../src/utils/ObjectHasValue";
+import { ObjectHasValue } from "../utils/ObjectHasValue";
 import api from "./Api"
 import { axiosPrivate } from "./Api";
 import { selectUser } from "../features/user/userSlice";

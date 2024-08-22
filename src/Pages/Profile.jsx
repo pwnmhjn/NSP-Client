@@ -1,13 +1,6 @@
-import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/user/userSlice";
-import {
-  useLocation,
-  Navigate,
-  Link,
-  Outlet,
-  useNavigate,
-} from "react-router-dom";
+import { selectUser } from "../features/user/userSlice";
+import { Link, Outlet } from "react-router-dom";
 import { format } from "date-fns";
 
 function Profile() {

@@ -12,7 +12,7 @@ import {
   Authors,
   AuthorInfo,
 } from "./Pages/index.js";
-import { remove, SelectToast } from "../features/toast/toastSlice.js";
+import { remove, SelectToast } from "../src/features/toast/toastSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn, SignUp } from "./Components/IndexComponents";
 import {

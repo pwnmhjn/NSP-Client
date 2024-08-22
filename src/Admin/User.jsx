@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { useLoaderData } from "react-router-dom";
-import useUsersData from "../../hooks/useUsersData";
+import useUsersData from "../hooks/useUsersData";
 
 function Loader() {
   const data = useUsersData();

@@ -1,5 +1,5 @@
-import { selectUser } from "../../features/user/userSlice";
-import useRefreshToken from "../../hooks/useRefreshToken";
+import { selectUser } from "../features/user/userSlice.js";
+import useRefreshToken from "../hooks/useRefreshToken.jsx";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";

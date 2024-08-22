@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { SignUpBtnClass } from "../../tailwindClass/BtnStyle";
-import { throwFailed, throwSuccess } from "../../../features/toast/toastSlice";
+import { throwFailed, throwSuccess } from "../../features/toast/toastSlice.js";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../../Api/userApi.js";
+import { registerUser } from "../../Api/userApi.js";
 import Input from "./Input";
 import { useNavigate } from "react-router-dom";
 

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
 import { useNavigate, Link, useOutletContext } from "react-router-dom";
-import { axiosPrivate } from "../../../Api/Api";
+import { axiosPrivate } from "../../Api/Api.js";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../../features/user/userSlice";
-import { throwFailed, throwSuccess } from "../../../features/toast/toastSlice";
+
+import { throwFailed, throwSuccess } from "../../features/toast/toastSlice";
+import { useState } from "react";
 function UserEditForm() {
   const { user, accessToken } = useOutletContext();
   const dispatch = useDispatch();

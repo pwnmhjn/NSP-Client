@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import useAxiosPrivate from "../../../hooks/useAxiosPrivate";
+import { useEffect } from "react";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate.jsx";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../features/user/userSlice";
+import { selectUser } from "../../features/user/userSlice.js";
 
 function ChapArticle() {
   const axiosPrivate = useAxiosPrivate();

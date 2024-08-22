@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
-import { selectUser } from "../../features/user/userSlice";
+import { selectUser } from "../features/user/userSlice.js";
 import { useSelector } from "react-redux";
 
 function PrivateRoute() {

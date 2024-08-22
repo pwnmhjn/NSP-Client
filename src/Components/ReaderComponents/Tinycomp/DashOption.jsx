@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
-import useLogout from "../../../../hooks/useLogout";
+import useLogout from "../../../hooks/useLogout";
 import { useDispatch } from "react-redux";
-import { throwSuccess } from "../../../../features/toast/toastSlice";
+import { throwSuccess } from "../../../features/toast/toastSlice";
 
 const DashOption = ({ setOption, option }) => {
   const logout = useLogout();
