@@ -2,7 +2,7 @@ import useAxiosPrivate from "./useAxiosPrivate";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
 
-const useUsersData = () => {
+function useUsersData() {
   const user = useSelector(selectUser);
   console.log(user);
 
@@ -24,7 +24,6 @@ const useUsersData = () => {
     }
   };
 
-  const data = fetchData();
-  return data;
-};
+  return fetchData();
+}
 export default useUsersData;

@@ -21,7 +21,7 @@ function UserEditForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axiosPrivate.put(`/update-userInfo`, userInfo, {
+      const res = await axiosPrivate.put(`/users/update-userInfo`, userInfo, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
@@ -31,6 +31,7 @@ function UserEditForm() {
       navigate("..");
       dispatch(throwSuccess(true, "Success", res.data.message));
     } catch (error) {
+      console.log(error);
       dispatch(throwFailed(true, "Failed", "User is not Updated"));
     }
   };

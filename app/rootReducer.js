@@ -1,7 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import toastReducer from "../features/toast/toastSlice";
-import headerReducer from "../features/header/headerSlice";
-import userReducer from '../features/user/userSlice'
+import toastReducer from "../src/features/toast/toastSlice";
+import headerReducer from "../src/features/header/headerSlice";
+import userReducer from '../src/features/user/userSlice'
 
 const rootReducer = combineReducers({
     toast: toastReducer,

@@ -14,17 +14,6 @@ function Authors() {
   const [currentPage, setCurrentPage] = useState(1);
   const [authorPerPage, setAuthorPerPage] = useState(4);
 
-  // (async () => {
-  //   const res = await axiosPrivate("/authors/get-authors", {
-  //     headers: {
-  //       Authorization: `Bearer ${accessToken}`,
-  //     },
-  //     withCredentials: true,
-  //   });
-  //   const receivedData = res.data.data;
-  //   setTotalAuthors(receivedData);
-  // })();
-
   useEffect(() => {
     setLoading(true);
     let isMounted = true;
@@ -36,7 +25,6 @@ function Authors() {
         });
 
         const receivedData = res.data.data;
-        console.log(receivedData);
         isMounted && setTotalAuthors(receivedData);
       } catch (error) {
         console.log(error);

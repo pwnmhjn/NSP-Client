@@ -1,15 +1,13 @@
 import { selectUser } from "../features/user/userSlice.js";
 import useRefreshToken from "../hooks/useRefreshToken.jsx";
 import { useSelector } from "react-redux";
-import { Outlet, useLoaderData } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function PersistLogin() {
   const [isLoading, setIsLoading] = useState(true);
   const refresh = useRefreshToken();
   const user = useSelector(selectUser);
-  const location = useLocation();
-  const path = location.pathname;
 
   useEffect(() => {
     const verifyRefreshToken = async () => {

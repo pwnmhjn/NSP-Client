@@ -15,7 +15,7 @@ function CoverEdit() {
     const formData = new FormData();
     formData.append("coverImage", cover);
     try {
-      const res = await axiosPrivate.put("/update-cover", formData, {
+      const res = await axiosPrivate.put("users/update-cover", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${accessToken}`,

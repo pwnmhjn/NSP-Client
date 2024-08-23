@@ -1,14 +1,12 @@
-import React from "react";
-import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import { useState, useEffect } from "react";
-import { selectUser } from "../../features/user/userSlice";
-import { useSelector } from "react-redux";
 import { useLoaderData } from "react-router-dom";
 import useUsersData from "../hooks/useUsersData";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/user/userSlice";
 
-function loader() {
-  const data = useUsersData();
-  return data;
+function Loader() {
+  return useUsersData();
 }
 
 function User() {

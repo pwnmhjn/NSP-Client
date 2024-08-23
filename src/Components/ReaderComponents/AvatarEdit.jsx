@@ -15,7 +15,7 @@ function AvatarEdit() {
     const formData = new FormData();
     formData.append("avatar", avatar);
     try {
-      const res = await axiosPrivate.put("/update-avatar", formData, {
+      const res = await axiosPrivate.put("users/update-avatar", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${accessToken}`,
