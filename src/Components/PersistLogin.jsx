@@ -1,14 +1,15 @@
 import { selectUser } from "../features/user/userSlice.js";
 import useRefreshToken from "../hooks/useRefreshToken.jsx";
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function PersistLogin() {
-  // const isLoading = useLoaderData();
   const [isLoading, setIsLoading] = useState(true);
   const refresh = useRefreshToken();
-  const user = useSelector(selectUser); //TODO persist Boolean
+  const user = useSelector(selectUser);
+  const location = useLocation();
+  const path = location.pathname;
 
   useEffect(() => {
     const verifyRefreshToken = async () => {
@@ -21,7 +22,7 @@ function PersistLogin() {
       }
     };
     !user?.accessToken ? verifyRefreshToken() : setIsLoading(false);
-  }, [user, refresh]);
+  }, [user, refresh, path]);
 
   return isLoading ? <h1>Loading</h1> : <Outlet />; //TODO Loading component
 }

@@ -1,9 +1,7 @@
-import axios from "axios";
+
 import { ObjectHasValue } from "../utils/ObjectHasValue";
 import api from "./Api"
-import { axiosPrivate } from "./Api";
-import { selectUser } from "../features/user/userSlice";
-import { useSelector } from "react-redux";
+
 
 export const registerUser = async (cred) => {
   if (ObjectHasValue(cred)) {

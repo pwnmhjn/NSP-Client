@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable react/prop-types */
 
 const Pagination = ({ authorPerPage, totalAuthors, paginate }) => {
   let pageNumber = [];
@@ -13,9 +12,9 @@ const Pagination = ({ authorPerPage, totalAuthors, paginate }) => {
           <button
             key={number}
             onClick={() => paginate(number)}
-            className="h-fit   w-fit bg-slate-600 m-2 p-2 "
+            className="h-fit w-fit bg-slate-600 m-2 p-2 "
           >
-            {number}{" "}
+            {number}
           </button>
         );
       })}

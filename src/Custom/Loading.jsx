@@ -1,4 +1,4 @@
-import React from "react";
+//TODO check if this component is usable or not
 
 function Loading() {
   return (

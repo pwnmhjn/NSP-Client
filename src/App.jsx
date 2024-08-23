@@ -26,8 +26,6 @@ import {
   CoverEdit,
   UserEditForm,
 } from "./Components/ReaderComponents/index.js";
-// import useRefreshToken from "../hooks/useRefreshToken.jsx";
-// import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
