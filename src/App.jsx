@@ -1,5 +1,5 @@
 import PrivateRoute from "./Components/PrivateRoute.jsx";
-// import PersistLogin from "./Components/PersistLogin.jsx";
+import PersistLogin from "./Components/PersistLogin.jsx";
 import { Toast } from "./Custom/index.js";
 import { IndexLayout, ReaderLayout, AuthorLayout } from "./Megapages";
 import { Admin, Author, Book, Chapter } from "./Admin";
