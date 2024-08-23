@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useOutletContext, Link, useNavigate } from "react-router-dom";
-import { axiosPrivate } from "../../../Api/Api";
+import { axiosPrivate } from "../../Api/Api.js";
 import { useDispatch } from "react-redux";
-import { throwSuccess, throwFailed } from "../../../features/toast/toastSlice";
+import { throwSuccess, throwFailed } from "../../features/toast/toastSlice.js";
 
 function AvatarEdit() {
   const { accessToken, user } = useOutletContext();

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import AdminInput from "./adminComponents/AdminInput";
 import { useDispatch } from "react-redux";
-import { throwFailed, throwSuccess } from "../../features/toast/toastSlice";
-import { createChapter } from "../../Api/adminApi";
+import { throwFailed, throwSuccess } from "../features/toast/toastSlice.js";
+import { createChapter } from "../Api/adminApi.js";
 function Chapter() {
   const dispatch = useDispatch();
   const [chapter, setChapter] = useState({

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import AdminInput from "./adminComponents/AdminInput";
 import { useDispatch } from "react-redux";
-import { throwFailed, throwSuccess } from "../../features/toast/toastSlice";
-import { createBook } from "../../Api/adminApi";
+import { throwFailed, throwSuccess } from "../features/toast/toastSlice";
+import { createBook } from "../Api/adminApi";
 
 function Book() {
   const dispatch = useDispatch();

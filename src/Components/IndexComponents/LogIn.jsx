@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LogInBtnClass } from "../../tailwindClass/BtnStyle";
-import { throwFailed, throwSuccess } from "../../../features/toast/toastSlice";
-import { setUser } from "../../../features/user/userSlice";
-import { logUser } from "../../../Api/userApi.js";
+import { throwFailed, throwSuccess } from "../../features/toast/toastSlice.js";
+import { setUser } from "../../features/user/userSlice.js";
+import { logUser } from "../../Api/userApi.js";
 
 function LogIn() {
   const navigate = useNavigate();

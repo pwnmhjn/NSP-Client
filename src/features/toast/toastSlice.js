@@ -48,23 +48,3 @@ export const toastSlice = createSlice({
 export const SelectToast = (state) => state.toast.toast;
 export const { throwFailed, throwSuccess, remove } = toastSlice.actions;
 export default toastSlice.reducer;
-
-// export const toastSlice = createSlice({
-//   name: "toast",
-//   initialState,
-//   reducers: {
-//     throwSuccess: (state, action) => {
-//       state.toast.visible = action.payload.visible;
-//       state.toast.title = action.payload.title;
-//       state.toast.message = action.payload.message;
-//     },
-//     throwFailed: (state, action) => {
-//       state.toast.visible = action.payload.visible;
-//       state.toast.title = action.payload.title;
-//       state.toast.message = action.payload.message;
-//     },
-//     remove: (state, action) => {
-//       state.toast.visible = action.payload;
-//     },
-//   },
-// });

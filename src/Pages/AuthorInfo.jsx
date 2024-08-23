@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import { useEffect, useState } from "react";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { format } from "date-fns";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/user/userSlice";
+import { selectUser } from "../features/user/userSlice.js";
 
 function AuthorInfo() {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +25,7 @@ function AuthorInfo() {
       setAuthorInfo(receivedData);
     })();
     setIsLoading(false);
-  }, [id]);
+  }, [isLoading, authorInfo, id, accessToken, axiosPrivate]);
 
   return (
     <>

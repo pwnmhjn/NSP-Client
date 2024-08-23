@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 function Input({ inputText, inputName, type, handleUserInput }) {
+  //TODO combine Input
   return (
     <>
       <span className="flex flex-col mt-3 ">

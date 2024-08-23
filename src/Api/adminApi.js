@@ -1,5 +1,5 @@
-import axios from "axios";
-import { ObjectHasValue } from "../src/utils/ObjectHasValue";
+
+import { ObjectHasValue } from "../utils/ObjectHasValue.js";
 import { AdminApi } from "./Api";
 
 export const createAuthor = async (cred) => {

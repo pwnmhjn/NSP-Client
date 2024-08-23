@@ -1,10 +1,10 @@
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import DashOption from "../Tinycomp/DashOption";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../../features/user/userSlice";
+import { selectUser } from "../../../features/user/userSlice.js";
 
 function Header() {
   const [option, setOption] = useState(false);

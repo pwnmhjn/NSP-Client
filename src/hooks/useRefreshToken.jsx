@@ -1,8 +1,7 @@
-import React from "react";
 import axios from "axios";
 import { setUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const useRefreshToken = () => {
   const dispatch = useDispatch();
@@ -14,12 +13,10 @@ const useRefreshToken = () => {
       const user = response.data?.data?.user;
       const accessToken = response.data?.data?.accessToken;
       dispatch(setUser({ user: user, accessToken: accessToken }));
-      console.log(accessToken);
       return accessToken;
     } catch (error) {
       console.log(error);
-      console.log(error);
-      <Navigate to="/" />
+      <Navigate to="/" />;
     }
   };
   return refresh;
