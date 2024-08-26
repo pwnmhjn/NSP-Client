@@ -3,12 +3,12 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { format } from "date-fns";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../features/user/userSlice.js";
+import { selectAccessToken } from "../features/user/userSlice.js";
 
 function AuthorInfo() {
   const [isLoading, setIsLoading] = useState(false);
   const [authorInfo, setAuthorInfo] = useState();
-  const { accessToken } = useSelector(selectUser);
+  const accessToken = useSelector(selectAccessToken);
   const axiosPrivate = useAxiosPrivate();
   const { id } = useParams();
 

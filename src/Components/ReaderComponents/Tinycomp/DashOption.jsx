@@ -4,7 +4,7 @@ import { IoLogOut } from "react-icons/io5";
 import useLogout from "../../../hooks/useLogout";
 import { useDispatch } from "react-redux";
 import { throwSuccess } from "../../../features/toast/toastSlice";
-
+import { removeProfile } from "../../../features/user/userSlice";
 const DashOption = ({ setOption, option }) => {
   const logout = useLogout();
   const navigate = useNavigate();

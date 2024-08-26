@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { AuthorDetail } from "../Components/AuthorComponents";
 import { Link, Outlet } from "react-router-dom";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { selectUser } from "../features/user/userSlice";
+import { selectAccessToken } from "../features/user/userSlice";
 import { useSelector } from "react-redux";
 
 import Pagination from "../Custom/Pagination/Pagination";
 function Authors() {
-  const { accessToken } = useSelector(selectUser);
+  const accessToken = useSelector(selectAccessToken);
   const axiosPrivate = useAxiosPrivate();
   const [loading, setLoading] = useState(false);
   const [totalAuthors, setTotalAuthors] = useState();

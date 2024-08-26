@@ -3,6 +3,7 @@ import { useOutletContext, Link, useNavigate } from "react-router-dom";
 import { axiosPrivate } from "../../Api/Api.js";
 import { useDispatch } from "react-redux";
 import { throwSuccess, throwFailed } from "../../features/toast/toastSlice.js";
+import { setProfile } from "../../features/user/userSlice.js";
 
 function AvatarEdit() {
   const { accessToken, user } = useOutletContext();
@@ -22,8 +23,11 @@ function AvatarEdit() {
         },
         withCredentials: true,
       });
+
       const message = res.data.message;
+      const updatedData = res.data.data;
       dispatch(throwSuccess(true, "Success", message));
+      dispatch(setProfile(updatedData));
       navigate("..");
     } catch (error) {
       const errMessage = error.response.data.message;
@@ -34,7 +38,7 @@ function AvatarEdit() {
 
   return (
     <>
-      <div className="flex relative font-mono flex-col text-center place-items-center">
+      <div className="flex  relative font-mono flex-col text-center place-items-center">
         <Link
           to=".."
           className="bg-teal-800 absolute left-4 h-fit w-fit p-2 border-2 mt-4"

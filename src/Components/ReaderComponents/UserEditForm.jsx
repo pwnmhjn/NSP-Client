@@ -1,6 +1,7 @@
 import { useNavigate, Link, useOutletContext } from "react-router-dom";
 import { axiosPrivate } from "../../Api/Api.js";
 import { useDispatch } from "react-redux";
+import { setProfile } from "../../features/user/userSlice.js";
 
 import { throwFailed, throwSuccess } from "../../features/toast/toastSlice";
 import { useState } from "react";
@@ -29,6 +30,8 @@ function UserEditForm() {
         withCredentials: true,
       });
       navigate("..");
+      const profile = res.data.data;
+      dispatch(setProfile(profile));
       dispatch(throwSuccess(true, "Success", res.data.message));
     } catch (error) {
       console.log(error);

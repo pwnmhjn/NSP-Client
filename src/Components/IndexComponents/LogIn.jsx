@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LogInBtnClass } from "../../tailwindClass/BtnStyle";
 import { throwFailed, throwSuccess } from "../../features/toast/toastSlice.js";
-import { setUser } from "../../features/user/userSlice.js";
+import { setProfile, setAccessToken } from "../../features/user/userSlice.js";
 import { logUser } from "../../Api/userApi.js";
 
 function LogIn() {
@@ -30,11 +30,11 @@ function LogIn() {
     const response = await logUser(userFields);
     if (response.statusCode === 200) {
       const user = response.data.user;
-
-      dispatch(setUser({ user: user, accessToken: response.data.accessToken }));
+      const accessToken = response.data.accessToken;
+      dispatch(setProfile(user));
+      dispatch(setAccessToken(accessToken));
       dispatch(throwSuccess(true, "Success", response.message));
       navigate(from, { replace: true });
-      navigate("/reader");
     } else {
       dispatch(throwFailed(true, "Failed", response.message));
     }

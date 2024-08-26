@@ -1,17 +1,16 @@
 import useAxiosPrivate from "./useAxiosPrivate";
 import { useSelector } from "react-redux";
-import { selectUser } from "../features/user/userSlice";
+import { selectAccessToken } from "../features/user/userSlice";
 
 function useUsersData() {
-  const user = useSelector(selectUser);
-  console.log(user);
+  const accessToken = useSelector(selectAccessToken);
 
   const axiosPrivate = useAxiosPrivate();
   const fetchData = async () => {
     try {
       const response = await axiosPrivate.get("/users/get-Users", {
         headers: {
-          Authorization: `Bearer ${user && user?.accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         withCredentials: true,
       });
@@ -24,6 +23,6 @@ function useUsersData() {
     }
   };
 
-  return fetchData();
+  return fetchData;
 }
 export default useUsersData;

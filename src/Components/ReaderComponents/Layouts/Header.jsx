@@ -4,13 +4,11 @@ import { useState } from "react";
 import DashOption from "../Tinycomp/DashOption";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../features/user/userSlice.js";
+import { selectProfile } from "../../../features/user/userSlice.js";
 
 function Header() {
   const [option, setOption] = useState(false);
-  // const navigate = useNavigate();
-  const payload = useSelector(selectUser);
-  const user = payload.user;
+  const user = useSelector(selectProfile);
 
   return (
     <>

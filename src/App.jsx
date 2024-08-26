@@ -1,10 +1,9 @@
 import PrivateRoute from "./Components/PrivateRoute.jsx";
-import PersistLogin from "./Components/PersistLogin.jsx";
+// import PersistLogin from "./Components/PersistLogin.jsx";
 import { Toast } from "./Custom/index.js";
 import { IndexLayout, ReaderLayout, AuthorLayout } from "./Megapages";
 import { Admin, Author, Book, Chapter } from "./Admin";
-import User, { Loader as UserLoader } from "./Admin/User.jsx";
-// import User from "./Admin/User.jsx";
+import User from "./Admin/User.jsx";
 
 import {
   ReaderHome,
@@ -72,7 +71,6 @@ function App() {
           <Route path="/admin" element={<Admin />}>
             <Route
               index
-              loader={UserLoader}
               // errorElement={<h1>did not found Data</h1>}
               element={<User />}
             />

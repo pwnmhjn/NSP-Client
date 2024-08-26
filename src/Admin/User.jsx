@@ -1,42 +1,31 @@
 import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
-import useUsersData from "../hooks/useUsersData";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { useSelector } from "react-redux";
-import { selectUser } from "../features/user/userSlice";
-
-function Loader() {
-  return useUsersData();
-}
+import { selectAccessToken } from "../features/user/userSlice";
 
 function User() {
   const [users, setUser] = useState(null);
-  // const user = useSelector(selectUser);
-  // const axiosPrivate = useAxiosPrivate();
+  const accessToken = useSelector(selectAccessToken);
+  const axiosPrivate = useAxiosPrivate();
 
-  const data = useLoaderData();
   useEffect(() => {
-    setUser(data);
-  }, [data]);
+    const fetchData = async () => {
+      try {
+        const response = await axiosPrivate.get("/users/get-Users", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          withCredentials: true,
+        });
+        const res = response.data.data;
+        setUser(res);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axiosPrivate.get("/users/get-Users", {
-  //         headers: {
-  //           Authorization: `Bearer ${user?.accessToken}`,
-  //         },
-  //         withCredentials: true,
-  //       });
-  //       const res = response.data.data;
-  //       setUser(res);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, [accessToken, axiosPrivate]);
 
   return (
     <div>
@@ -48,4 +37,3 @@ function User() {
 }
 
 export default User;
-export { Loader };

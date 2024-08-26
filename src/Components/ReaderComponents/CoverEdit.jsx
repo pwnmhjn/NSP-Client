@@ -3,6 +3,7 @@ import { useOutletContext, Link, useNavigate } from "react-router-dom";
 import { axiosPrivate } from "../../Api/Api";
 import { useDispatch } from "react-redux";
 import { throwSuccess, throwFailed } from "../../features/toast/toastSlice.js";
+import { setProfile } from "../../features/user/userSlice.js";
 
 function CoverEdit() {
   const { accessToken, user } = useOutletContext();
@@ -23,7 +24,9 @@ function CoverEdit() {
         withCredentials: true,
       });
       const message = res.data.message;
+      const profile = res.data.data;
       dispatch(throwSuccess(true, "Success", message));
+      dispatch(setProfile(profile));
       navigate("..");
     } catch (error) {
       const errMessage = error.response.data.message;

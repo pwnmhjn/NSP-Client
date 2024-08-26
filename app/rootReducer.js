@@ -6,7 +6,7 @@ import userReducer from '../src/features/user/userSlice'
 const rootReducer = combineReducers({
     toast: toastReducer,
     header: headerReducer,
-    user: userReducer
+    auth: userReducer
 });
 
 export default rootReducer;

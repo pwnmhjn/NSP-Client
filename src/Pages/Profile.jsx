@@ -1,16 +1,20 @@
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/user/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectAccessToken,
+  selectProfile,
+  setProfile,
+} from "../features/user/userSlice";
 import { Link, Outlet } from "react-router-dom";
 import { format } from "date-fns";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function Profile() {
   const axiosPrivate = useAxiosPrivate();
-  const payload = useSelector(selectUser);
-  const [user, setUser] = useState("");
-  const { accessToken } = payload;
+  const accessToken = useSelector(selectAccessToken);
+  const user = useSelector(selectProfile);
 
+  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       const res = await axiosPrivate("/users/get-currentUser", {
@@ -20,15 +24,14 @@ function Profile() {
         withCredentials: true,
       });
       const user = res.data.data;
-      setUser(user);
-      console.log(user);
+      dispatch(setProfile(user));
     })();
-  }, [accessToken, axiosPrivate]);
+  }, []);
 
   return (
     <>
       {user && (
-        <div className="flex  flex-col font-mono mx-auto w-2/3 h-fit mt-10 border-2 rounded-md  bg-slate-400">
+        <div className="flex  flex-col font-mono mx-auto w-[700px] h-fit mt-10 border-2 rounded-md  bg-slate-400">
           <div
             className="bg-cover group relative"
             style={{ backgroundImage: `url(${user.coverImage})` }}
@@ -55,14 +58,16 @@ function Profile() {
               @{user.username}
             </h1>
             <div className="text-teal-800 flex justify-between  ml-3 mb-3">
-              <span>
-                <h1 className=" font-bold">
-                  Since:-{" "}
-                  <span className="text-black">
-                    {`${format(user.createdAt, "dd-MM-yyyy")}`}{" "}
-                  </span>{" "}
-                </h1>
-              </span>
+              {user.createdAt && (
+                <span>
+                  <h1 className=" font-bold">
+                    Since:-
+                    <span className="text-black">
+                      {`${format(new Date(user.createdAt), "dd-MM-yyyy")}`}
+                    </span>
+                  </h1>
+                </span>
+              )}
               <span>
                 <Link
                   to="edit"
