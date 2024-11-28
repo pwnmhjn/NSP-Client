@@ -1,7 +1,7 @@
 import Admin from "./Admin";
-import Book from "./Book";
-import Chapter from "./Chapter";
-import Author from "./Author";
-// import User,  from "./User";
+import BookForm from "./BookForm"
+import ChapterForm from "./ChapterForm";
+import AuthorForm from "./AuthorForm";
 
-export { Admin, Book, Chapter, Author };
+
+export { Admin, BookForm, ChapterForm, AuthorForm };

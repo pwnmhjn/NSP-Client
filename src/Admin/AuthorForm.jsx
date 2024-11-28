@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { throwFailed, throwSuccess } from "../features/toast/toastSlice";
 import { createAuthor } from "../Api/adminApi";
 
-function Author() {
+function AuthorForm() {
   const dispatch = useDispatch();
   const [author, setAuthor] = useState({
     name: "",
@@ -103,4 +103,4 @@ function Author() {
   );
 }
 
-export default Author;
+export default AuthorForm;

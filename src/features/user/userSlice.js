@@ -4,7 +4,7 @@ export const userSlice = createSlice({
     name: "Profile",
     initialState: {
         profile: null,
-        accessToken: null
+        accessToken: ""
     },
     reducers: {
         setProfile: (state, action) => {
@@ -13,12 +13,10 @@ export const userSlice = createSlice({
         removeProfile: (state, action) => {
             state.profile = action.payload
             state.accessToken = action.payload
-
         },
         setAccessToken: (state, action) => {
             state.accessToken = action.payload
         },
-
     }
 })
 

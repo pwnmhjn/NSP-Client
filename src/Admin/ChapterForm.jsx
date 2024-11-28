@@ -1,9 +1,9 @@
 import { useState } from "react";
-import AdminInput from "./adminComponents/AdminInput";
+import AdminInput from "./adminComponents/AdminInput.jsx";
 import { useDispatch } from "react-redux";
 import { throwFailed, throwSuccess } from "../features/toast/toastSlice.js";
 import { createChapter } from "../Api/adminApi.js";
-function Chapter() {
+function ChapterForm() {
   const dispatch = useDispatch();
   const [chapter, setChapter] = useState({
     title: "",
@@ -96,4 +96,4 @@ function Chapter() {
   );
 }
 
-export default Chapter;
+export default ChapterForm;

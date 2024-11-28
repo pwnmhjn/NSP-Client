@@ -5,10 +5,9 @@ import { useSelector } from "react-redux";
 function PrivateRoute() {
   const location = useLocation();
   const accessToken = useSelector(selectAccessToken);
-  if (!accessToken) {
+  if (!accessToken.length) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-
   return <Outlet />;
 }
 

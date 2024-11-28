@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { throwFailed, throwSuccess } from "../features/toast/toastSlice";
 import { createBook } from "../Api/adminApi";
 
-function Book() {
+function BookForm() {
   const dispatch = useDispatch();
   const [book, setBook] = useState({
     title: "",
@@ -170,4 +170,4 @@ function Book() {
   );
 }
 
-export default Book;
+export default BookForm;

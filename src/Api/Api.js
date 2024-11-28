@@ -14,10 +14,8 @@ export const axiosPrivate = axios.create({
         "Content-Type": "application/json",
     },
     withCredentials: true
+
 })
-
-
-
 
 export const AdminApi = axios.create({
     baseURL: "/api/v1/admin",

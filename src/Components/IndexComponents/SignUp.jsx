@@ -41,7 +41,7 @@ function SignUp() {
 
   return (
     <>
-      <div className=" col-span-5 h-auto place-content-center ">
+      <div className=" h-auto place-content-center ">
         <form
           action=""
           onSubmit={createUser}

@@ -26,7 +26,6 @@ function LogIn() {
   };
   const LogIn = async (event) => {
     event.preventDefault();
-
     const response = await logUser(userFields);
     if (response.statusCode === 200) {
       const user = response.data.user;

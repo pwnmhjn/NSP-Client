@@ -1,3 +1,6 @@
+
+
+
 export const ObjectHasValue = (obj) => {
   if (!obj) {
     return false;
@@ -6,7 +9,6 @@ export const ObjectHasValue = (obj) => {
       (field) => field === null || field === "" || field === undefined
     )
   ) {
-    console.log(obj);
     return false;
   } else {
     return true;

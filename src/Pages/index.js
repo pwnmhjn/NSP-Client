@@ -4,5 +4,6 @@ import Profile from "./Profile.jsx";
 import Authors from "./Authors.jsx";
 import IndexAbout from "./IndexAbout.jsx";
 import AuthorInfo from "./AuthorInfo.jsx";
+import Chapter from "./Chapter.jsx";
 
-export { ReaderAbout, ReaderHome, Profile, IndexAbout, Authors, AuthorInfo };
+export { ReaderAbout, Chapter, ReaderHome, Profile, IndexAbout, Authors, AuthorInfo };

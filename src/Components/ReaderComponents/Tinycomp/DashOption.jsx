@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { Link, useNavigate } from "react-router-dom";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
 import useLogout from "../../../hooks/useLogout";
 import { useDispatch } from "react-redux";
 import { throwSuccess } from "../../../features/toast/toastSlice";
-import { removeProfile } from "../../../features/user/userSlice";
+
 const DashOption = ({ setOption, option }) => {
   const logout = useLogout();
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const DashOption = ({ setOption, option }) => {
 
   return (
     <>
-      <div className=" flex flex-col  justify-around h-60 w-40 rounded-l-xl p-3 rounded-br-lg border-2 border-slate-700 absolute top-14 right-12 bg-slate-500">
+      <div className=" flex flex-col  absolute  justify-around h-60 w-40 rounded-l-xl p-3 rounded-br-lg border-2 border-slate-700  top-14 right-12 bg-slate-500">
         <span className=" h-5 w-full">
           <Link
             to="profile"

@@ -2,7 +2,7 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 // import PersistLogin from "./Components/PersistLogin.jsx";
 import { Toast } from "./Custom/index.js";
 import { IndexLayout, ReaderLayout, AuthorLayout } from "./Megapages";
-import { Admin, Author, Book, Chapter } from "./Admin";
+import { Admin, AuthorForm, BookForm, ChapterForm } from "./Admin";
 import User from "./Admin/User.jsx";
 
 import {
@@ -12,6 +12,7 @@ import {
   IndexAbout,
   Authors,
   AuthorInfo,
+  Chapter,
 } from "./Pages/index.js";
 import { remove, SelectToast } from "../src/features/toast/toastSlice.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,6 +33,7 @@ function App() {
   const dispatch = useDispatch();
   const toast = useSelector(SelectToast);
   // console.log(JSON.stringify(import.meta.env)); //TODO  Config ENV
+
   const cancelToast = () => {
     dispatch(remove());
   };
@@ -56,6 +58,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="reader" element={<ReaderLayout />}>
             <Route index element={<ReaderHome />} />
+            <Route path="chapter/:id" element={<Chapter />} />
             <Route path="authors" element={<AuthorLayout />}>
               <Route index element={<Authors />} />
               <Route path=":id" element={<AuthorInfo />} />
@@ -69,14 +72,10 @@ function App() {
           </Route>
           {/* //?------------------------------------------ */}
           <Route path="/admin" element={<Admin />}>
-            <Route
-              index
-              // errorElement={<h1>did not found Data</h1>}
-              element={<User />}
-            />
-            <Route path="book" element={<Book />} />
-            <Route path="author" element={<Author />} />
-            <Route path="chapter" element={<Chapter />} />
+            <Route index element={<User />} />
+            <Route path="book" element={<BookForm />} />
+            <Route path="author" element={<AuthorForm />} />
+            <Route path="chapter" element={<ChapterForm />} />
           </Route>
         </Route>
         {/* </Route> */}
