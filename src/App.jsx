@@ -32,7 +32,7 @@ import {
 function App() {
   const dispatch = useDispatch();
   const toast = useSelector(SelectToast);
-  // console.log(JSON.stringify(import.meta.env)); //TODO  Config ENV
+  // console.log(JSON.stringify(import.meta.env.VITE_API_URL)); //TODO  Config ENV
 
   const cancelToast = () => {
     dispatch(remove());
