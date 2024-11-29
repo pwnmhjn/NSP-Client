@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 // Load environment variables from `.env` file
-dotenv.config();
+// dotenv.config();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,8 +11,8 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "http://localhost:8080"
-        // target: "https://nsp-server.vercel.app",
-        target: process.env.VITE_API_URL,
+        target: "https://nsp-server.vercel.app",
+        // target: process.env.VITE_API_URL,
         changeOrigin: "true"
       }
     },
